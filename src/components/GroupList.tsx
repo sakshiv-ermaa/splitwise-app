@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Users, DollarSign, Plus } from 'lucide-react';
+import { Users, IndianRupee, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -28,21 +28,21 @@ const GroupList = () => {
         id: '1',
         name: 'Weekend Trip',
         users: ['Alice', 'Bob', 'Charlie'],
-        totalExpenses: 450.00,
+        totalExpenses: 37500.00,
         memberCount: 3
       },
       {
         id: '2',
         name: 'Apartment Rent',
         users: ['Alice', 'David'],
-        totalExpenses: 2400.00,
+        totalExpenses: 200000.00,
         memberCount: 2
       },
       {
         id: '3',
         name: 'Goa Trip',
         users: ['Alice', 'Bob', 'Charlie', 'Eve'],
-        totalExpenses: 1250.00,
+        totalExpenses: 104250.00,
         memberCount: 4
       }
     ]);
@@ -87,7 +87,7 @@ const GroupList = () => {
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Total Expenses</span>
-                <span className="font-semibold text-lg">${group.totalExpenses.toFixed(2)}</span>
+                <span className="font-semibold text-lg">₹{group.totalExpenses.toFixed(2)}</span>
               </div>
               
               <div className="flex space-x-2">
@@ -106,7 +106,7 @@ const GroupList = () => {
                   className="flex-1"
                   onClick={() => handleViewBalances(group.id)}
                 >
-                  <DollarSign className="h-4 w-4 mr-1" />
+                  <IndianRupee className="h-4 w-4 mr-1" />
                   Balances
                 </Button>
               </div>

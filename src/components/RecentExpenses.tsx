@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { DollarSign, Clock, Users } from 'lucide-react';
+import { IndianRupee, Clock, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -28,7 +28,7 @@ const RecentExpenses = ({ limit }: RecentExpensesProps) => {
       {
         id: '1',
         description: 'Dinner at Italian Restaurant',
-        amount: 85.50,
+        amount: 7125.50,
         paidBy: 'Alice',
         group: 'Weekend Trip',
         splitType: 'equal',
@@ -38,7 +38,7 @@ const RecentExpenses = ({ limit }: RecentExpensesProps) => {
       {
         id: '2',
         description: 'Uber ride to airport',
-        amount: 35.00,
+        amount: 2917.00,
         paidBy: 'Bob',
         group: 'Weekend Trip',
         splitType: 'equal',
@@ -48,7 +48,7 @@ const RecentExpenses = ({ limit }: RecentExpensesProps) => {
       {
         id: '3',
         description: 'Apartment rent - January',
-        amount: 2400.00,
+        amount: 200000.00,
         paidBy: 'David',
         group: 'Apartment Rent',
         splitType: 'percentage',
@@ -58,7 +58,7 @@ const RecentExpenses = ({ limit }: RecentExpensesProps) => {
       {
         id: '4',
         description: 'Groceries and supplies',
-        amount: 125.75,
+        amount: 10479.25,
         paidBy: 'Charlie',
         group: 'Goa Trip',
         splitType: 'equal',
@@ -68,7 +68,7 @@ const RecentExpenses = ({ limit }: RecentExpensesProps) => {
       {
         id: '5',
         description: 'Hotel booking',
-        amount: 450.00,
+        amount: 37500.00,
         paidBy: 'Alice',
         group: 'Goa Trip',
         splitType: 'equal',
@@ -97,7 +97,7 @@ const RecentExpenses = ({ limit }: RecentExpensesProps) => {
   if (expenses.length === 0) {
     return (
       <div className="text-center py-8">
-        <DollarSign className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+        <IndianRupee className="h-12 w-12 text-gray-400 mx-auto mb-4" />
         <p className="text-gray-600 mb-2">No expenses yet</p>
         <p className="text-sm text-gray-500">Add your first expense to get started</p>
       </div>
@@ -111,7 +111,7 @@ const RecentExpenses = ({ limit }: RecentExpensesProps) => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
               <h4 className="font-medium text-gray-900">{expense.description}</h4>
-              <span className="font-bold text-lg">${expense.amount.toFixed(2)}</span>
+              <span className="font-bold text-lg">₹{expense.amount.toFixed(2)}</span>
             </div>
             
             <div className="flex items-center justify-between text-sm text-gray-600">

@@ -26,9 +26,9 @@ const GroupBalances = ({ isOpen, onClose, groupId }: GroupBalancesProps) => {
       // Mock data - replace with actual API call
       setGroupName('Weekend Trip');
       setBalances([
-        { from: 'Alice', to: 'Bob', amount: 25.50 },
-        { from: 'Charlie', to: 'Bob', amount: 15.75 },
-        { from: 'Alice', to: 'Charlie', amount: 8.25 }
+        { from: 'Alice', to: 'Bob', amount: 2125.50 },
+        { from: 'Charlie', to: 'Bob', amount: 1312.75 },
+        { from: 'Alice', to: 'Charlie', amount: 687.25 }
       ]);
     }
   }, [groupId, isOpen]);
@@ -82,19 +82,19 @@ const GroupBalances = ({ isOpen, onClose, groupId }: GroupBalancesProps) => {
                           <>
                             <TrendingUp className="h-4 w-4 text-green-500" />
                             <Badge variant="secondary" className="text-green-700 bg-green-100">
-                              +${netBalance.toFixed(2)}
+                              +₹{netBalance.toFixed(2)}
                             </Badge>
                           </>
                         ) : netBalance < 0 ? (
                           <>
                             <TrendingDown className="h-4 w-4 text-red-500" />
                             <Badge variant="secondary" className="text-red-700 bg-red-100">
-                              ${netBalance.toFixed(2)}
+                              ₹{netBalance.toFixed(2)}
                             </Badge>
                           </>
                         ) : (
                           <Badge variant="secondary" className="text-gray-700">
-                            $0.00
+                            ₹0.00
                           </Badge>
                         )}
                       </div>
@@ -126,7 +126,7 @@ const GroupBalances = ({ isOpen, onClose, groupId }: GroupBalancesProps) => {
                         <span className="font-medium">{balance.to}</span>
                       </div>
                       <Badge variant="outline" className="text-lg font-semibold">
-                        ${balance.amount.toFixed(2)}
+                        ₹{balance.amount.toFixed(2)}
                       </Badge>
                     </div>
                     <p className="text-sm text-gray-600 mt-1">
@@ -143,7 +143,7 @@ const GroupBalances = ({ isOpen, onClose, groupId }: GroupBalancesProps) => {
             <CardHeader>
               <CardTitle className="text-base">Settlement Summary</CardTitle>
               <CardDescription>
-                Total amount to be settled: $
+                Total amount to be settled: ₹
                 {balances.reduce((sum, balance) => sum + balance.amount, 0).toFixed(2)}
               </CardDescription>
             </CardHeader>

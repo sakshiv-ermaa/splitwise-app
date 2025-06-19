@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { DollarSign, Users, Percent } from 'lucide-react';
+import { IndianRupee, Users, Percent } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -139,7 +139,7 @@ const AddExpenseModal = ({ isOpen, onClose, groupId }: AddExpenseModalProps) => 
           </div>
 
           <div>
-            <Label htmlFor="amount">Amount ($)</Label>
+            <Label htmlFor="amount">Amount (₹)</Label>
             <Input
               id="amount"
               type="number"

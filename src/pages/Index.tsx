@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Plus, Users, DollarSign, BarChart3 } from 'lucide-react';
+import { Plus, Users, IndianRupee, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import GroupList from '@/components/GroupList';
@@ -20,7 +20,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
-                <DollarSign className="h-6 w-6 text-white" />
+                <IndianRupee className="h-6 w-6 text-white" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Splitwise Clone</h1>
@@ -44,7 +44,7 @@ const Index = () => {
           {[
             { id: 'overview', label: 'Overview', icon: BarChart3 },
             { id: 'groups', label: 'Groups', icon: Users },
-            { id: 'expenses', label: 'Recent Expenses', icon: DollarSign },
+            { id: 'expenses', label: 'Recent Expenses', icon: IndianRupee },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -83,7 +83,7 @@ const Index = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
-                    <DollarSign className="h-5 w-5 text-green-500" />
+                    <IndianRupee className="h-5 w-5 text-green-500" />
                     <span>Recent Activity</span>
                   </CardTitle>
                   <CardDescription>
@@ -118,7 +118,7 @@ const Index = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <DollarSign className="h-5 w-5 text-green-500" />
+                  <IndianRupee className="h-5 w-5 text-green-500" />
                   <span>All Expenses</span>
                 </CardTitle>
                 <CardDescription>

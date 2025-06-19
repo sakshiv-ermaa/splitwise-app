@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
+import { TrendingUp, TrendingDown, IndianRupee } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -23,26 +23,26 @@ const BalanceOverview = () => {
     setUserBalance({
       userId: 'alice',
       userName: 'Alice',
-      totalOwed: 125.50, // People owe Alice this much
-      totalOwes: 45.75,   // Alice owes this much to others
-      netBalance: 79.75   // Alice is owed 79.75 overall
+      totalOwed: 10458.50, // People owe Alice this much
+      totalOwes: 3812.75,   // Alice owes this much to others
+      netBalance: 6645.75   // Alice is owed 6645.75 overall
     });
 
     setTopDebts([
-      { person: 'Charlie', amount: 33.75 },
-      { person: 'David', amount: 12.00 }
+      { person: 'Charlie', amount: 2812.25 },
+      { person: 'David', amount: 1000.50 }
     ]);
 
     setTopCredits([
-      { person: 'Bob', amount: 85.25 },
-      { person: 'Eve', amount: 40.25 }
+      { person: 'Bob', amount: 7104.25 },
+      { person: 'Eve', amount: 3354.25 }
     ]);
   }, []);
 
   if (!userBalance) {
     return (
       <div className="text-center py-8">
-        <DollarSign className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+        <IndianRupee className="h-12 w-12 text-gray-400 mx-auto mb-4" />
         <p className="text-gray-600">Loading balance...</p>
       </div>
     );
@@ -62,7 +62,7 @@ const BalanceOverview = () => {
                 <TrendingDown className="h-5 w-5 text-red-500" />
               )}
               <span className={`text-2xl font-bold ${userBalance.netBalance >= 0 ? 'text-green-700' : 'text-red-700'}`}>
-                ${Math.abs(userBalance.netBalance).toFixed(2)}
+                ₹{Math.abs(userBalance.netBalance).toFixed(2)}
               </span>
             </div>
           </div>
@@ -77,13 +77,13 @@ const BalanceOverview = () => {
         <Card className="p-3">
           <div className="text-center">
             <p className="text-xs text-gray-600 mb-1">You are owed</p>
-            <p className="text-lg font-semibold text-green-600">${userBalance.totalOwed.toFixed(2)}</p>
+            <p className="text-lg font-semibold text-green-600">₹{userBalance.totalOwed.toFixed(2)}</p>
           </div>
         </Card>
         <Card className="p-3">
           <div className="text-center">
             <p className="text-xs text-gray-600 mb-1">You owe</p>
-            <p className="text-lg font-semibold text-red-600">${userBalance.totalOwes.toFixed(2)}</p>
+            <p className="text-lg font-semibold text-red-600">₹{userBalance.totalOwes.toFixed(2)}</p>
           </div>
         </Card>
       </div>
@@ -98,7 +98,7 @@ const BalanceOverview = () => {
                 {topCredits.map((credit, index) => (
                   <div key={index} className="flex justify-between items-center text-sm">
                     <span>{credit.person}</span>
-                    <span className="font-medium text-green-600">+${credit.amount.toFixed(2)}</span>
+                    <span className="font-medium text-green-600">+₹{credit.amount.toFixed(2)}</span>
                   </div>
                 ))}
               </div>
@@ -112,7 +112,7 @@ const BalanceOverview = () => {
                 {topDebts.map((debt, index) => (
                   <div key={index} className="flex justify-between items-center text-sm">
                     <span>{debt.person}</span>
-                    <span className="font-medium text-red-600">-${debt.amount.toFixed(2)}</span>
+                    <span className="font-medium text-red-600">-₹{debt.amount.toFixed(2)}</span>
                   </div>
                 ))}
               </div>
